@@ -1,0 +1,42 @@
+.chat-contact {
+    margin-top: 5px;
+    @include flex-box(row, flex-start, center, 15px);
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    transition: background 0.2s ease; 
+
+    &:hover {
+        background: $color-boxes-shade;
+        cursor: pointer;
+    }
+
+    &__image {
+        img{    
+           width: 50px;
+        }
+    }
+
+    &__info {
+        width: 100%;
+        position: relative;
+
+        &__time {
+            position: absolute;
+            top: 10;
+            right: 10px;
+            font-size: $font-size-small;
+            opacity: 0.5;
+        }
+
+        &__name {
+            font-size: $font-size-regular;
+            margin-bottom: 5px;
+            font-weight: $font-weight-bold;
+        }
+
+        &__last-message {
+            opacity: 0.6;
+        }
+    }
+}
