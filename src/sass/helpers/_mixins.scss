@@ -1,0 +1,40 @@
+/* FlexBox Mixin
+================ */
+@mixin flex-box($direction, $justify-content, $align-items, $gap: unset){
+
+    @if $direction != row and $direction != column {
+        @error "Property 'direction' must be either row or column.";
+    }
+
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    @if $gap {
+        gap: $gap;
+    }
+}
+
+/* Grid System
+============== */
+@mixin grid-system($col-num, $gap) {
+    display: grid;
+    grid-template-columns: repeat($col-num, 1fr);
+    gap: $gap;
+}
+
+/* Create Squares
+================= */
+@mixin square-it($width) {
+    width: $width;
+    aspect-ratio:  1 / 1;
+}
+
+/* Container Setting
+==================== */
+@mixin container-setting($width, $max-width, $min-width) {
+    width: $width;
+    max-width: $max-width;
+    min-width: $min-width;
+    margin: auto;
+}
